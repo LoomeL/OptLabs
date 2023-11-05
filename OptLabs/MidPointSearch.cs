@@ -4,20 +4,19 @@ public class MidPointSearch : AbstractSearch
 {
     public override double Function(double x)
     {
-        return Math.Exp(-3 * x) + x * x;
+        return Math.Exp(-3 * x) + Math.Pow(x, 2);
     }
 
     private static double Derivative(Func func, double x)
     {
-        var h = 1e-5;
-        return (func.Invoke(x + h) - func.Invoke(x - h)) / (2 * h);
+        return -3 * Math.Exp(-3 * x) + 2 * x;
     }
 
     public override SearchResult Search(double a, double b, double epsilon, Func func)
     {
         var x = (a + b) / 2.0;
-
-        while (Math.Abs(b - a) > epsilon)
+        
+        while (Math.Abs(Derivative(func, x)) > epsilon)
         {
             var df = Derivative(func, x);
 
