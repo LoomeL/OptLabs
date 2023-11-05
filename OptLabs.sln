@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptLabs", "OptLabs\OptLabs.csproj", "{B9D27FA1-5AD2-43C9-96E3-31B7F8F6AF0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptLabsTest", "OptLabsTest\OptLabsTest.csproj", "{94067062-B1E4-44EA-9E00-D5BC40185D5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9D27FA1-5AD2-43C9-96E3-31B7F8F6AF0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D27FA1-5AD2-43C9-96E3-31B7F8F6AF0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D27FA1-5AD2-43C9-96E3-31B7F8F6AF0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D27FA1-5AD2-43C9-96E3-31B7F8F6AF0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94067062-B1E4-44EA-9E00-D5BC40185D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94067062-B1E4-44EA-9E00-D5BC40185D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94067062-B1E4-44EA-9E00-D5BC40185D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94067062-B1E4-44EA-9E00-D5BC40185D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
