@@ -2,6 +2,6 @@
 
 public class SearchResult
 {
-    public double MinX;
     public double FunX;
+    public double MinX;
 }

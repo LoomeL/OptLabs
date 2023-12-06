@@ -9,7 +9,7 @@ public class BitwiseSearchTests
     public void Test1(double leftInterval, double rightInterval, double epsilon)
     {
         var search = new BitwiseSearch();
-        var result = search.Search(leftInterval, rightInterval, epsilon, AbstractSearch.FunctionX);
+        var result = search.Search(leftInterval, rightInterval, epsilon, search.FunctionX);
         Assert.Multiple(
             () => Assert.Equal(leftInterval, result.MinX, epsilon),
             () => Assert.Equal(leftInterval, result.FunX, epsilon));
@@ -22,7 +22,7 @@ public class BitwiseSearchTests
     public void Test2(double leftInterval, double rightInterval, double epsilon)
     {
         var search = new BitwiseSearch();
-        var result = search.Search(leftInterval, rightInterval, epsilon, AbstractSearch.FunctionNegativeX);
+        var result = search.Search(leftInterval, rightInterval, epsilon, search.FunctionNegativeX);
         Assert.Multiple(
             () => Assert.Equal(rightInterval, result.MinX, epsilon),
             () => Assert.Equal(-rightInterval, result.FunX, epsilon));

@@ -1,37 +1,49 @@
 ﻿namespace OptLabs;
 
-public class MidPointSearch : AbstractSearch
+public class MidPointSearch
 {
-    public override double Function(double x)
+    public double Function(double x)
     {
         return Math.Exp(-3 * x) + Math.Pow(x, 2);
     }
 
-    private static double Derivative(Func func, double x)
+    private static double Derivative(double x)
     {
         return -3 * Math.Exp(-3 * x) + 2 * x;
     }
 
-    public override SearchResult Search(double a, double b, double epsilon, Func func)
+    private static double SecondDerivative(double x)
+    {
+        return 9 * Math.Exp(-3 * x) + 2;
+    }
+
+    public SearchResult Search(double a, double b, double epsilon)
     {
         var x = (a + b) / 2.0;
-        
-        while (Math.Abs(Derivative(func, x)) > epsilon)
+        var aX = a;
+        var bX = b;
+        while (Math.Abs(Derivative(x)) > epsilon)
         {
-            var df = Derivative(func, x);
+            var df = Derivative(x);
 
             if (df > 0)
-                b = x;
+            {
+                bX = x;
+                if (Math.Abs(a - x) < epsilon) break;
+            }
             else
-                a = x;
+            {
+                aX = x;
+                if (Math.Abs(b - x) < epsilon) break;
+            }
 
-            x = (a + b) / 2.0;
+            x = (aX + bX) / 2.0;
         }
 
         return new SearchResult
         {
             MinX = x,
-            FunX = func.Invoke(x)
+            FunX = Function(x)
         };
     }
 }

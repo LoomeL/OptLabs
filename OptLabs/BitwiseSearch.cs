@@ -1,13 +1,25 @@
 ﻿namespace OptLabs;
 
-public class BitwiseSearch : AbstractSearch
+public class BitwiseSearch
 {
-    public override double Function(double x)
+    public delegate double Func(double x);
+
+    public double Function(double x)
     {
         return Math.Sqrt(x * x + 1) / (5 * x + 2);
     }
 
-    public override SearchResult Search(double a, double b, double epsilon, Func func)
+    public double FunctionX(double x)
+    {
+        return x;
+    }
+
+    public double FunctionNegativeX(double x)
+    {
+        return -x;
+    }
+
+    public SearchResult Search(double a, double b, double epsilon, Func func)
     {
         var d = (b - a) / 2;
         var x0 = a;
